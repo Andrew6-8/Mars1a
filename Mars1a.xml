@@ -15,15 +15,16 @@
                 <field name="NUM">100</field>
               </block>
             </value>
-            <next>
-              <block type="movement_stutter" id="91"></block>
-            </next>
           </block>
         </next>
       </block>
     </statement>
     <next>
-      <block type="movement_stop" id="81"></block>
+      <block type="movement_stop" id="81">
+        <next>
+          <block type="movement_stutter" id="91"></block>
+        </next>
+      </block>
     </next>
   </block>
 </xml>
