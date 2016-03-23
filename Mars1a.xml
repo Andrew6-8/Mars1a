@@ -1,27 +1,37 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="118" x="-12" y="47">
-    <next>
-      <block type="oled_drawnumber" id="142" inline="true">
-        <value name="NUMBER">
-          <block type="sensor_spectrometer" id="149">
-            <field name="LIGHT">BLUE</field>
-          </block>
-        </value>
+  <block type="controls_whileUntil" id="182" inline="false" x="-17" y="28">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="189">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="oled_cleardisplay" id="118">
         <next>
-          <block type="oled_setcursor" id="167" inline="true">
-            <value name="STARTX">
-              <block type="math_number" id="174">
-                <field name="NUM">10</field>
+          <block type="oled_drawnumber" id="142" inline="true">
+            <value name="NUMBER">
+              <block type="sensor_spectrometer" id="149">
+                <field name="LIGHT">BLUE</field>
               </block>
             </value>
-            <value name="STARTY">
-              <block type="math_number" id="175">
-                <field name="NUM">10</field>
+            <next>
+              <block type="oled_setcursor" id="167" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="174">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="175">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
               </block>
-            </value>
+            </next>
           </block>
         </next>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>
