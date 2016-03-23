@@ -58,14 +58,10 @@
                     <next>
                       <block type="oled_setcursor" id="307" inline="true">
                         <value name="STARTX">
-                          <block type="math_number" id="308">
-                            <field name="NUM">5</field>
-                          </block>
+                          <block type="math_random" id="432"></block>
                         </value>
                         <value name="STARTY">
-                          <block type="math_number" id="309">
-                            <field name="NUM">5</field>
-                          </block>
+                          <block type="math_random" id="433"></block>
                         </value>
                       </block>
                     </next>
