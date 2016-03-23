@@ -7,31 +7,60 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="oled_cleardisplay" id="118">
-        <next>
-          <block type="oled_drawnumber" id="142" inline="true">
-            <value name="NUMBER">
-              <block type="sensor_spectrometer" id="149">
+      <block type="controls_if" id="203" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="228" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="243">
                 <field name="LIGHT">BLUE</field>
               </block>
             </value>
+            <value name="B">
+              <block type="math_number" id="250">
+                <field name="NUM">70</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_setmotors" id="270" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="271">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="272">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="oled_drawtext" id="290">
+            <field name="TEXT">Malfunction, Malcfuntion</field>
             <next>
-              <block type="oled_setcursor" id="167" inline="true">
+              <block type="oled_setcursor" id="307" inline="true">
                 <value name="STARTX">
-                  <block type="math_number" id="174">
-                    <field name="NUM">10</field>
+                  <block type="math_number" id="308">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
                 <value name="STARTY">
-                  <block type="math_number" id="175">
-                    <field name="NUM">10</field>
+                  <block type="math_number" id="309">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
               </block>
             </next>
           </block>
-        </next>
+        </statement>
       </block>
     </statement>
+    <next>
+      <block type="movement_stop" id="322"></block>
+    </next>
   </block>
 </xml>
