@@ -43,22 +43,41 @@
           </block>
         </statement>
         <statement name="ELSE">
-          <block type="oled_drawtext" id="290">
-            <field name="TEXT">Malfunction</field>
-            <next>
-              <block type="oled_setcursor" id="307" inline="true">
-                <value name="STARTX">
-                  <block type="math_number" id="308">
-                    <field name="NUM">5</field>
-                  </block>
-                </value>
-                <value name="STARTY">
-                  <block type="math_number" id="309">
-                    <field name="NUM">5</field>
-                  </block>
-                </value>
+          <block type="controls_whileUntil" id="364" inline="false">
+            <field name="MODE">UNTIL</field>
+            <value name="NUMBER">
+              <block type="sensor_button" id="379">
+                <field name="OBJECT">DOWN</field>
               </block>
-            </next>
+            </value>
+            <statement name="DO">
+              <block type="oled_cleardisplay" id="394">
+                <next>
+                  <block type="oled_drawtext" id="290">
+                    <field name="TEXT">Malfunction</field>
+                    <next>
+                      <block type="oled_setcursor" id="307" inline="true">
+                        <value name="STARTX">
+                          <block type="math_number" id="308">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                        <value name="STARTY">
+                          <block type="math_number" id="309">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="multimedia_playwav" id="422">
+                            <field name="WAV">beep.w</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
           </block>
         </statement>
       </block>
