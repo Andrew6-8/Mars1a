@@ -44,7 +44,7 @@
         </statement>
         <statement name="ELSE">
           <block type="oled_drawtext" id="290">
-            <field name="TEXT">Malfunction, Malcfuntion</field>
+            <field name="TEXT">Malfunction</field>
             <next>
               <block type="oled_setcursor" id="307" inline="true">
                 <value name="STARTX">
